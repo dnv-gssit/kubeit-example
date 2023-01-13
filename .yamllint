@@ -1,6 +1,9 @@
 ---
 extends: default
 
+ignore: |
+  helm/*
+
 rules:
   line-length: disable
   braces:
