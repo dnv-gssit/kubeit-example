@@ -38,4 +38,4 @@ jobs:
           context: .
           push: ${{ env.PUSH_IMAGE }}
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ghcr.io/${{ github.repository }}/test:latest
+          labels: ghcr.io/${{ github.repository }}:latest
