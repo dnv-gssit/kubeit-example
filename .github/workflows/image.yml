@@ -38,5 +38,5 @@ jobs:
         with:
           context: .
           push: ${{ env.PUSH_IMAGE }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}:latest
+          labels: ${{ github.repository }}
