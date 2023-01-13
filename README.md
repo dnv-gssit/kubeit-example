@@ -6,7 +6,17 @@
 
 3. Deploy ArgoCD application
 
-References:
+
+
+# Development environment
+
+1. IDE for coding: Eclipse or Visual Studio Code
+
+2. git
+
+3. [pre-commit](https://pre-commit.com/)
+
+# References:
 
 1. [Intro Guide to Dockerfile Best Practices](https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices)
 
@@ -16,6 +26,6 @@ References:
    [13 Best Practices for using Helm - DEV Community](https://dev.to/coder_society/13-best-practices-for-using-helm-2mac)
 
 4. [GitOps with ArgoCD](https://codefresh.io/learn/argo-cd/)
-  [ArgoCD best practices](https://codefresh.io/blog/argo-cd-best-practices)
+   [ArgoCD best practices](https://codefresh.io/blog/argo-cd-best-practices)
 
 5. [argoproj/argocd-example-apps: Example Apps to Demonstrate Argo CD (github.com)](https://github.com/argoproj/argocd-example-apps)
