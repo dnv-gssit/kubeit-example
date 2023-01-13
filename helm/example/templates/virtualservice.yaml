@@ -1,0 +1,25 @@
+{{- if .Values.ingress.enabled -}}
+{{- $fullName := include "example.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "example.labels" . | nindent 4 }}
+spec:
+  hosts:
+    - "{{ .Values.ingress.host }}{{if .Values.ingress.env }}.{{ .Values.ingress.env }}{{end}}.{{ .Values.ingress.domain }}"
+  gateways:
+    - istio-system/global-https-{{ .Values.ingress.gateway }}-default-gateway
+  http:
+    - match:
+        - uri:
+            prefix: {{ .Values.ingress.prefix }}
+      route:
+        - destination:
+            port:
+              number: {{ $svcPort }}
+            host: {{ $fullName }}
+{{- end }}
