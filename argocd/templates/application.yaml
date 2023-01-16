@@ -23,9 +23,11 @@ spec:
       values: |
         image:
           repository: {{ .Values.image.repository }}
+          pullPolicy: {{ .Values.image.pullPolicy }}
         ingress:
           env: {{ .Values.clusterSubdomain }}
         region: {{ .Values.region }}
+        securityContext: {{ .Values.securityContext }}
   syncPolicy:
     automated:
       prune: true
