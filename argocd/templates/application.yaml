@@ -16,7 +16,8 @@ spec:
   project: sampleapp
   source:
     repoURL: {{ .Values.repoURL }}
-    chart: example
+    targetRevision: {{ .Values.targetRevision }}
+    chart: helm/example
     helm:
       releaseName: test
       values: |
