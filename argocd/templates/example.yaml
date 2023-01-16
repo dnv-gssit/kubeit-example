@@ -10,6 +10,9 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   name: simple-example
 spec:
+  destination:
+    namespace: simple-example
+    server: https://kubernetes.default.svc
   project: sampleapp
   source:
     repoURL: https://github.com/dnv-gssit/kubeit-example.git
