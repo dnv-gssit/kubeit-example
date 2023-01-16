@@ -6,7 +6,7 @@ metadata:
     argocd-image-updater.argoproj.io/alias.update-strategy: digest
     argocd-image-updater.argoproj.io/alias.force-update: "true"
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
   name: simple-example
 spec:
   project: sampleapp
@@ -31,7 +31,7 @@ spec:
         maxDuration: 1m
       limit: 2
     syncOptions:
-    - Validate=true
-    - CreateNamespace=false
-    - PrunePropagationPolicy=foreground
-    - PruneLast=false
+      - Validate=true
+      - CreateNamespace=false
+      - PrunePropagationPolicy=foreground
+      - PruneLast=false
