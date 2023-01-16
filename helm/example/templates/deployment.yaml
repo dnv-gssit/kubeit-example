@@ -47,6 +47,9 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+          - mountPath: /usr/share/nginx/html
+            name: content
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -59,3 +62,11 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      terminationGracePeriodSeconds: 10
+      volumes:
+        - name: content
+          configMap:
+            name: {{ include "example.fullname" . }}
+            items:
+              - key: html
+                path: index.html
