@@ -13,11 +13,11 @@ spec:
   destination:
     namespace: {{ .Values.namespace }}
     server: https://kubernetes.default.svc
-  project: sampleapp
+  project: {{ .Values.tenantName }}
   source:
-    repoURL: {{ .Values.repoURL | replace ".git" " " | quote }}
-    targetRevision: {{ .Values.chart.version }}
-    chart: {{ .Values.chart.name }}
+    repoURL: {{ .Values.repoURL }}
+    targetRevision: {{ .Values.targetRevision }}
+    path: {{ .Values.path }}
     helm:
       releaseName: test
       values: |

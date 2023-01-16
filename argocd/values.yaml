@@ -11,7 +11,6 @@
 # tenantName: # tenant name, example: sampleapp
 # targetRevision: # branch for tenant repo, example: main
 # repoURL: # tenant repo URL, example: https://github.com/dnv-gssit/kubeit-example.git
-repoURL: "https://test"
 # networkPlugin: # network driver for cluster: azure or kubenet
 # tenantPodIdentityName: # tenant pod identity name "tenant-sampleapp-pod-identity"
 # tenantMultiRegion: # tenant multiregion, example: true
@@ -20,9 +19,7 @@ repoURL: "https://test"
 
 appName: simple-example
 namespace: simple-example
-chart:
-  name: example
-  version: 0.1.0
+path: "helm/example"
 
 image:
   repository: ghcr.io/dnv-gssit/kubeit-example
