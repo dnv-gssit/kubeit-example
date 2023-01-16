@@ -1,7 +1,8 @@
+---
 # The following values are injected by argoCD DNV specific
 
 # env: # nonprod or prod
-# region: # westeurope, eastus2, southeastasia 
+# region: # westeurope, eastus2, southeastasia
 # dnsDomain: "kubeit.dnv.com"
 # clusterSubdomain: # clustername like "nonprod001"
 # clusterColour: # cluster colour like "blue" or "green", currect active is provided by KubeIT team
@@ -26,4 +27,3 @@ image:
 
 imageUpdater:
   enabled: true
-  
