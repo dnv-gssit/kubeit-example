@@ -2,11 +2,19 @@
 
 1. Build and publish docker image
 
+   Source file: Dockerfile
+   In example, just based on nginx image
+
+   Pipeline: .github/workflows/image.yml
+
 2. Helm chart for application
+
+   Source folder: helm/example
+   Created by `helm create` command and tuned for KubeIT: use Virtualservice for istio
 
 3. Deploy ArgoCD application
 
-
+   Source folder: argocd
 
 # Development environment
 
