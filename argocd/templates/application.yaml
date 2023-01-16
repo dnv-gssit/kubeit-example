@@ -15,9 +15,9 @@ spec:
     server: https://kubernetes.default.svc
   project: sampleapp
   source:
-    repoURL: {{ .Values.repoURL }}
-    targetRevision: {{ .Values.targetRevision }}
-    chart: helm/example
+    repoURL: {{ .Values.repoURL | replace ".git" " " | quote }}
+    targetRevision: {{ .Values.chart.version }}
+    chart: {{ .Values.chart.name }}
     helm:
       releaseName: test
       values: |
