@@ -1,0 +1,29 @@
+---
+# The following values are injected by argoCD DNV specific
+
+# env: # nonprod or prod
+# region: # westeurope, eastus2, southeastasia
+# dnsDomain: "kubeit.dnv.com"
+# clusterSubdomain: # clustername like "nonprod001"
+# clusterColour: # cluster colour like "blue" or "green", currect active is provided by KubeIT team
+# ingressType: # ingress type "internal" for F5, "external" for Load Balancer
+# shortRegion: # short region name: we, eus2, sea
+# tenantName: # tenant name, example: sampleapp
+# targetRevision: # branch for tenant repo, example: main
+# repoURL: # tenant repo URL, example: https://github.com/dnv-gssit/kubeit-example.git
+# networkPlugin: # network driver for cluster: azure or kubenet
+# tenantPodIdentityName: # tenant pod identity name "tenant-sampleapp-pod-identity"
+# tenantMultiRegion: # tenant multiregion, example: true
+# managementNamespace: # tenant management namespace name, example: "management-sampleapp"
+# tenantIdentityClientId: # tenant identity client id, example: "6b05c2ea-a77e-4695-9669-0f789e337537"
+
+appName: simple-example
+namespace: simple-example
+chartName: example
+
+image:
+  repository: ghcr.io/dnv-gssit/kubeit-example
+  tag: latest
+
+imageUpdater:
+  enabled: true

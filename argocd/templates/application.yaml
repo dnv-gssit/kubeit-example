@@ -3,39 +3,39 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: alias=ghcr.io/dnv-gssit/kubeit-example:latest
+    argocd-image-updater.argoproj.io/image-list: alias={{ .Values.image.repository }}:{{ .Values.image.tag }}
     argocd-image-updater.argoproj.io/alias.update-strategy: digest
     argocd-image-updater.argoproj.io/alias.force-update: "true"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  name: simple-example
+  name: {{ .Values.appName }}
 spec:
   destination:
-    namespace: simple-example
+    namespace: {{ .Values.namespace }}
     server: https://kubernetes.default.svc
   project: sampleapp
   source:
-    repoURL: https://github.com/dnv-gssit/kubeit-example.git
+    repoURL: {{ .Values.repoURL }}
     chart: example
     helm:
       releaseName: test
       values: |
         image:
-          repository: ghcr.io/dnv-gssit/kubeit-example
+          repository: {{ .Values.image.repository }}
         ingress:
-          env: nonprod002
+          env: {{ .Values.clusterSubdomain }}
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
-    retry:
-      backoff:
-        duration: 5s
-        factor: 2
-        maxDuration: 1m
-      limit: 2
+      selfHeal: false
     syncOptions:
       - Validate=true
       - CreateNamespace=false
       - PrunePropagationPolicy=foreground
       - PruneLast=false
+    retry:
+      limit: 2
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 1m
