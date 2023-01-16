@@ -25,6 +25,7 @@ spec:
           repository: {{ .Values.image.repository }}
         ingress:
           env: {{ .Values.clusterSubdomain }}
+        region: {{ .Values.region }}
   syncPolicy:
     automated:
       prune: true

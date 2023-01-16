@@ -24,3 +24,11 @@ path: "helm/example"
 image:
   repository: ghcr.io/dnv-gssit/kubeit-example
   tag: latest
+
+securityContext:
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
