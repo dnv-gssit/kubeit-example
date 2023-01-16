@@ -2,8 +2,7 @@
 
 1. Build and publish docker image
 
-   Source file: Dockerfile
-
+   Source folder: docker
 
    Pipeline: .github/workflows/image.yml
 
