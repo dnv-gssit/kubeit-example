@@ -18,7 +18,7 @@
 # tenantIdentityClientId: # tenant identity client id, example: "6b05c2ea-a77e-4695-9669-0f789e337537"
 
 appName: simple-example
-#namespace: simple-example
+# namespace: simple-example
 path: "helm/example"
 
 image:
