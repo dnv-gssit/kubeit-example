@@ -18,7 +18,8 @@ data:
     </head>
     <body>
     <h1>Welcome to DVN nginx!</h1>
-    <p>If you see this page for enviroment {{ .Values.ingress.env }}, region {{ .Values.region }}
+    <p>If you see this page for enviroment {{ .Values.ingress.env }}, region {{ .Values.region }},
+    namespace {{ .Release.Namespace }}
     the nginx web server is successfully installed and
     working.</p>
 
