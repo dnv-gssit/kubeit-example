@@ -25,6 +25,7 @@ spec:
           repository: {{ .Values.image.repository }}
           pullPolicy: {{ .Values.image.pullPolicy }}
         ingress:
+          host: {{ .Values.namespace }}
           env: {{ .Values.clusterSubdomain }}
         region: {{ .Values.region }}
         securityContext: {{ .Values.securityContext }}
