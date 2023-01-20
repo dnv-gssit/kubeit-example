@@ -24,6 +24,29 @@
 
 3. [pre-commit](https://pre-commit.com/)
 
+# Workshop tasks
+
+1. Expose your docker image via ACR or GitHub packages (public).
+
+2. In case of using your own Dev ACR:
+
+* please assign role **ACRpull** to Service Principle **Az_KubeIT_AcrReader_Env_Dev**
+
+* create credentials to your ACR, add as gitbub secrets, modify `.github/image.yml` pipeline to push into ACR
+
+  ```
+      ... # instead of Log in to the Container registry task
+      uses: docker/login-action@v2
+      with:
+        registry: ${{ env.ACR_NAME }}
+        username: ${{ secrets.ACR_USERNAME }}
+        password: ${{ secrets.ACR_PASSWORD }}
+  ```
+
+3. Modify `argocd/values.yaml`, **image.repository** to use your own image.
+
+4. Do more modifications in helm chart `helm/` or `argocd` and play with KubeIT.
+
 # References:
 
 1. [Intro Guide to Dockerfile Best Practices](https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices)
