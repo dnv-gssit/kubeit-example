@@ -22,7 +22,7 @@ data:
     namespace {{ .Release.Namespace }}
     the nginx web server is successfully installed and
     working.</p>
-    
+
     <p>Demo for the great team!
 
     <p><em>Thank you.</em></p>
