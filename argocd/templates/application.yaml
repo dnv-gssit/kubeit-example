@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: alias={{ .Values.image.repository }}:{{ .Values.image.tag }}
+    argocd-image-updater.argoproj.io/image-list: alias={{ .Values.image.repository }}
     argocd-image-updater.argoproj.io/alias.update-strategy: digest
     argocd-image-updater.argoproj.io/alias.force-update: "true"
   finalizers:
