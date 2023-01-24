@@ -4,8 +4,7 @@ kind: Application
 metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: alias={{ .Values.image.repository }}
-    argocd-image-updater.argoproj.io/alias.update-strategy: digest
-    argocd-image-updater.argoproj.io/alias.force-update: "true"
+    argocd-image-updater.argoproj.io/alias.update-strategy: latest
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   name: {{ printf "%s-%s" .Values.appNamePrefix (default "" .Values.appName)| trunc 63 | trimSuffix "-" }}
