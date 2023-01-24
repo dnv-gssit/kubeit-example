@@ -28,6 +28,7 @@ spec:
           env: {{ .Values.clusterSubdomain }}
         region: {{ .Values.region }}
         securityContext: {{ .Values.securityContext }}
+        replicaCount: 3
   syncPolicy:
     automated:
       prune: true
