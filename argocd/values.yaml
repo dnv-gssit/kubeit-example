@@ -7,7 +7,7 @@ path: "helm/example"
 image:
   repository: ghcr.io/dnv-gssit/kubeit-example
   pullPolicy: Always
-  tag: 39 # latest
+  tag: 40 # latest
 
 ingress:
   host: nginx-demo
