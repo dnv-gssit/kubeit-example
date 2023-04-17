@@ -6,6 +6,17 @@
 html { color-scheme: light dark; }
 body { width: 35em; margin: 0 auto;
 font-family: Tahoma, Verdana, Arial, sans-serif; }
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -14,6 +25,9 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 <p>Demo for Technical Collaboration Forum</p>
 
 <p>Demo at the 19th Apr 2023!</p>
+
+<div class="blink_me">New feature!</div>
+<p>Other new feature</p>
 
 <p><em>Thank you.</em></p>
 </body>
