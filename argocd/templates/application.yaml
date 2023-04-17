@@ -20,8 +20,8 @@ spec:
     path: {{ .Values.path }}
     helm:
       parameters:
-        - name: image.tag
-          value: {{ .Values.image.tag }}
+        - name: "image.tag"
+          value: {{ quote .Values.image.tag }}
       releaseName: test
       valueFiles:
         - values-production.yaml
