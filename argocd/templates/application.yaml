@@ -23,6 +23,7 @@ spec:
         image:
           repository: {{ .Values.image.repository }}
           pullPolicy: {{ .Values.image.pullPolicy }}
+          tag: {{ .Values.image.tag }}
         ingress:
           host: {{ .Values.ingress.host }}
           env: {{ .Values.clusterSubdomain }}
