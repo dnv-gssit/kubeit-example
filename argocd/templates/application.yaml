@@ -19,9 +19,6 @@ spec:
     targetRevision: {{ .Values.targetRevision }}
     path: {{ .Values.path }}
     helm:
-      parameters:
-        - name: "image.tag"
-          value: {{ quote .Values.image.tag }}
       releaseName: test
       valueFiles:
         - values-dev.yaml
