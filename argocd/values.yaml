@@ -14,12 +14,12 @@
 # networkPlugin: # network driver for cluster: azure or kubenet
 # tenantPodIdentityName: # tenant pod identity name "tenant-sampleapp-pod-identity"
 # tenantMultiRegion: # tenant multiregion, example: true
-# managementNamespace: # tenant management namespace name, example: "management-sampleapp"
+managementNamespace: management-tenant2
 # tenantIdentityClientId: # tenant identity client id, example: "6b05c2ea-a77e-4695-9669-0f789e337537"
 
 # for sandbox only
 # appName: name of application defined globally in server
-# namespace: namespace where application is going to be deployed
+namespace: tenant2-helm
 
 appNamePrefix: example
 path: "helm/example"
