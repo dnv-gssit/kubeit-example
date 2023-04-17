@@ -1,3 +1,4 @@
+---
 namespace: tenant2-helm
 
 appNamePrefix: example
