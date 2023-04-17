@@ -11,6 +11,8 @@ image:
 
 ingress:
   host: nginx-demo
+  env: dev054
+
 replicaCount: 1
 
 securityContext:

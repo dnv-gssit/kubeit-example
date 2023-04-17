@@ -24,7 +24,7 @@ spec:
           value: {{ quote .Values.image.tag }}
       releaseName: test
       valueFiles:
-        - values-production.yaml
+        - values-dev.yaml
   syncPolicy:
     automated:
       prune: true
