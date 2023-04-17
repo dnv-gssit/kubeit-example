@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/dnv-gssit/kubeit-example
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: latest
+  tag: 41 # latest
 
 imagePullSecrets: []
 nameOverride: ""

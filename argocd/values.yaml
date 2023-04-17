@@ -6,7 +6,6 @@ path: "helm/example"
 
 image:
   repository: ghcr.io/dnv-gssit/kubeit-example
-  tag: latest
   pullPolicy: Always
 
 ingress:
