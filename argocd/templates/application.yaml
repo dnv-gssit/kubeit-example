@@ -20,9 +20,15 @@ spec:
     helm:
       releaseName: test
       values: |
-        {{- with .Values }}
-          {{- toYaml . | nindent 8 }}
-        {{- end }}
+        image:
+          repository: {{ .Values.image.repository }}
+          pullPolicy: {{ .Values.image.pullPolicy }}
+        ingress:
+          host: {{ .Values.ingress.host }}
+          env: {{ .Values.clusterSubdomain }}
+        region: {{ .Values.region }}
+        securityContext: {{ .Values.securityContext }}
+        replicaCount: {{ .Values.replicaCount }}
   syncPolicy:
     automated:
       prune: true
