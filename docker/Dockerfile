@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:1.23-alpine
+FROM nginx
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY ./index.html /usr/share/nginx/html/index.html
