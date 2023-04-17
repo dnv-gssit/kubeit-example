@@ -20,15 +20,9 @@ spec:
     helm:
       releaseName: test
       values: |
-        image:
-          repository: {{ .Values.image.repository }}
-          pullPolicy: {{ .Values.image.pullPolicy }}
-        ingress:
-          host: {{ .Values.namespace }}
-          env: {{ .Values.clusterSubdomain }}
-        region: {{ .Values.region }}
-        securityContext: {{ .Values.securityContext }}
-        replicaCount: 3
+        {{- with .Values }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
   syncPolicy:
     automated:
       prune: true
