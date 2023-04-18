@@ -9,5 +9,5 @@ metadata:
     app.kubernetes.io/instance: grafana-dashboard
 spec:
   customFolderName: MyFolder
-  json: |
+  json: >
     {{ .Files.Get "grafana-dashboards/awesome.json" | indent 4 }}
