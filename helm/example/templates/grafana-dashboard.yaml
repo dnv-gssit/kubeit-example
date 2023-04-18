@@ -1,0 +1,11 @@
+apiVersion: integreatly.org/v1alpha1
+kind: GrafanaDashboard
+metadata:
+  name: awesome-dashboard-{{ .Release.Name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app.kubernetes.io/instance: grafana-dashboard
+spec:
+  customFolderName: MyFolder
+  json: >
+{{ .Files.Get "grafana-dashboards/awesome.json" | indent 4 }}
