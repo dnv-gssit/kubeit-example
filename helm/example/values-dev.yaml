@@ -1,5 +1,5 @@
 ---
-namespace: tenant2-helm
+namespace: tenant3-helm
 
 appNamePrefix: example
 path: "helm/example"
