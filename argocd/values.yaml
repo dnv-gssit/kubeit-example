@@ -1,15 +1,9 @@
 ---
-namespace: tenant3-helm
+namespace: tenant2-helm
 
 appNamePrefix: example
 path: "helm/example"
 
 image:
   repository: ghcr.io/dnv-gssit/kubeit-example
-  pullPolicy: Always
   tag: latest
-
-ingress:
-  host: nginx-demo
-
-replicaCount: 1
