@@ -10,4 +10,4 @@ metadata:
 spec:
   customFolderName: MyFolder
   json: |
-{{ .Files.Get "grafana-dashboards/awesome.json" | indent 4 }}
+    {{ .Files.Get "grafana-dashboards/awesome.json" | indent 4 }}
