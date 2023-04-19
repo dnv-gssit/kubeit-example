@@ -1,6 +1,4 @@
 ---
-namespace: tenant3-helm
-
 appNamePrefix: example
 path: "helm/example"
 
