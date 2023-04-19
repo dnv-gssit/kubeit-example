@@ -3,11 +3,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: alias={{ .Values.image.repository }}
-    argocd-image-updater.argoproj.io/alias.update-strategy: latest
+    argocd-image-updater.argoproj.io/image-list: alias={{ .Values.image.repository }}:{{ .Values.image.tag }}
+    argocd-image-updater.argoproj.io/alias.update-strategy: digest
+    argocd-image-updater.argoproj.io/alias.force-update: "true"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  name: {{ printf "%s-%s" .Values.appNamePrefix (default "" .Values.appName)| trunc 63 | trimSuffix "-" }}
+  name: example-app
 spec:
   destination:
     namespace: {{ .Values.namespace }}
@@ -19,16 +20,8 @@ spec:
     path: {{ .Values.path }}
     helm:
       releaseName: test
-      values: |
-        image:
-          repository: {{ .Values.image.repository }}
-          pullPolicy: {{ .Values.image.pullPolicy }}
-        ingress:
-          host: {{ .Values.namespace }}
-          env: {{ .Values.clusterSubdomain }}
-        region: {{ .Values.region }}
-        securityContext: {{ .Values.securityContext }}
-        replicaCount: 3
+      valueFiles:
+        - values-dev.yaml
   syncPolicy:
     automated:
       prune: true

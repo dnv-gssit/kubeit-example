@@ -5,9 +5,8 @@
 replicaCount: 1
 
 image:
-  # ghcr.io/dnv-gssit/kubeit-example
-  repository: nginx
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/dnv-gssit/kubeit-example
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
 
@@ -50,7 +49,7 @@ ingress:
   host: example
   # KubeIT env to deploy (each cluster has unique id), may be omitted
   env:
-  # Domain used to service service, it may be custom, default is kubeit.dnv.com
+  # Domain used to service, it may be custom, default is kubeit.dnv.com
   domain: kubeit.dnv.com
   prefix: /
 
@@ -61,13 +60,6 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 

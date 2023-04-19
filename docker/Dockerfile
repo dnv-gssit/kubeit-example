@@ -1,5 +1,6 @@
-FROM nginxinc/nginx-unprivileged:1.23-alpine
+FROM nginx:stable-alpine
 
+COPY ./index.html /usr/share/nginx/html/index.html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN echo "new image"
+RUN cat /usr/share/nginx/html/index.html
