@@ -8,7 +8,7 @@ metadata:
     argocd-image-updater.argoproj.io/alias.force-update: "true"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  name: {{ printf "%s-%s" .Values.appNamePrefix (default "" .Values.appName)| trunc 63 | trimSuffix "-" }}
+  name: example-app
 spec:
   destination:
     namespace: {{ .Values.namespace }}
