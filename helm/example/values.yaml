@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   # ghcr.io/dnv-gssit/kubeit-example
   repository: nginx
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
 
@@ -35,11 +35,11 @@ securityContext:
       - ALL
   readOnlyRootFilesystem: true
   runAsNonRoot: true
-  runAsUser: 1000
+  runAsUser: 101
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
 
 # It is specific to use istio gateway as ingress
 ingress:
