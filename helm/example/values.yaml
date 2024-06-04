@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 # let back to 25
-replicaCount: 25
+replicaCount: 100
 
 image:
   # ghcr.io/dnv-gssit/kubeit-example
