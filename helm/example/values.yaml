@@ -2,8 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# let back to 25
-replicaCount: 100
+replicaCount: 1
 
 image:
   # ghcr.io/dnv-gssit/kubeit-example
